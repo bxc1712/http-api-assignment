@@ -25,7 +25,7 @@ const onRequest = (request, response) => {
   // parse the url using the url module
   // This will let us grab any section of the URL by name
     const parsedUrl = url.parse(request.url);
-
+    console.dir(request.headers.accept);
   // grab the 'accept' headers (comma delimited) and split them into an array
     const acceptedTypes = request.headers.accept.split(',');
     const params = query.parse(parsedUrl.query);
@@ -34,7 +34,7 @@ const onRequest = (request, response) => {
   if (urlStruct[parsedUrl.pathname]) {
     urlStruct[parsedUrl.pathname](request, response, acceptedTypes, params);
   } else {
-    urlStruct.notFound(request, response);
+    urlStruct.notFound(request, response, acceptedTypes);
   }
 };
 

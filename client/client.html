@@ -66,8 +66,8 @@
 
             const select = document.querySelector('#page');
             const type = document.querySelector('#type');
-            const selected = select.options[select.selectedIndex].value; 
-            const selectedType = type.options[type.selectedIndex].value; 
+            const selected = select.options.value; 
+            const selectedType = type.options.value; 
             //functions to call sendAjax for us with the correct parameters
             const send = () => sendAjax(selected, selectedType);
             

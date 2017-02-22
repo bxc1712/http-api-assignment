@@ -194,6 +194,10 @@ const notFound = (request, response, acceptedTypes) => {
       message: 'This page you are looking for was not found',
     };
     
+    console.log(request.url);
+    
+    console.dir(acceptedTypes);
+    
     // if the client's most preferred type (first option listed)
     // is xml, then respond xml instead
     if (acceptedTypes[0] === 'text/xml') {
